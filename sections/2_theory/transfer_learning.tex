@@ -1,0 +1,26 @@
+\subsection{Transfer Learning}
+The motivation behind transfer learning is to transfer generalizable features from one network to another - leveraging learning from different settings than the downstream task. 
+A useful notation for describing transfer learning was provided in (Pan and Yang, 2010)\autocite{PanYang2010}. 
+
+Consider a data domain, $\mathcal{D}$, there exists a complete feature space $\mathcal{X}$. 
+When training models, limited data is available and we rely on a sample of that feauture space; $X = x_{1},...,x_{n} \in \mathcal{X}$.
+The marginal distribution of $\mathcal{D}$ is $P(x)$. We describe $\mathcal{D} = \{\mathcal{X}, P(X)\}$. 
+A task, $\mathcal{T}$ has label space $\mathcal{Y}$ and a conditional probabiltiy distribution, $P(Y|X)$ learned from the training sample.
+\newline
+Transfer learning is concerned with mapping learned features from one domain and target to another such that information learned in the source setting $\mathcal{D}_S, \mathcal{T}_S$ can aid in identifying the conditional probability distribution $P(Y_{T}|X_{T})$ of a different target domain, $\mathcal{D}_T$.
+\newline
+This notation implies that four transfer learning scenarios exist. 
+The scenario of interest for this report is the case where $P(X_{S}) \neq P(X_{T})$, such that the marginal distributions of the source and target domains are dissimilar, this is known as \textbf{domain adaptation}. 
+
+% Most applications of machine learning methods rely on input originating from a domain with shared characteristics. 
+% This is often observed practical applications of machine learning; train a model to predict in a particular domain such as predicting whether an image is of a cat or a dog. 
+% This is referred to as the traditional supervised learning paradigm. 
+% Models developed within this paradigm can be proficient at solving the stated training objective, but fail to generalize to new information and require extensive retraining in order to perform with new data or classes.
+% \newline
+% Models trained to solve supervised learning objectives often exhibit similar learning behavior in early layers. 
+% Many deep neural networks trained on images tend to learn features similar to filters such as the Gabor\autocite{Pan2014} and Sobel filters in the first layers.
+% Such learned features should in theory be applicable across many different domains, as they reflect the models ability to distinguish between e.g. textures, shapes and edges.
+% \newline
+% The motivation behind transfer learning is the proposition that these features are generalizable and thus transferrable from one network to the other; leveraging learning from other domains. 
+
+

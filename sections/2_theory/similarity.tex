@@ -1,0 +1,18 @@
+\subsection{Similarity}
+In measuring similarity between images many different proposals for candidate methods surface. 
+However, in the context of this project it is the aim to determine similarity between feature vectors obtained from e.g. autoencoders bottleneck layers.
+This significantly simplifies the task as these feature vectors are 1-d arrays.
+\newline
+A well-established and conceptually simple metric for this usecase is the cosine similarity. 
+It is commonly used in determining word-to-word similarity and naïve recommender systems. 
+The cosine similarity is defined as:
+$$
+similarity(A,B) = \frac{\sum\limits_{i=1}^n A_{i}B_{i}}{\sqrt{\sum\limits_{i=1}^n A_{i}^{2}} \sqrt{\sum\limits_{i=1}^n B_{i}^{2}}}
+$$
+Trivially, the distance between two vectors can be obtained by:
+$$
+cdist(A,B) = 1 - similarity(A,B)
+$$
+
+
+

@@ -1,0 +1,10 @@
+\subsection{Perceptual Hashing}
+A Hashing algorithm is intended to produce a \textit{fingerprint} of a file, e.g. an image. 
+Cryptographic hashing algorithms such as \texttt{bcrypt} and \texttt{MD5}, produces this fingerprint in a way such that the same image, with only a single pixel altered, would result in a significantly different hash - this is called the \textit{The Avalanche Effect}.
+Perceptual hashing algorithms on the other hand, would in the same scenario produce two very similar hashes. 
+Perceptual hashing algorithms are therefore quite useful in detecting e.g. copyright infringements on photographs, logos, etc. 
+There are many different perceptual hashing algorithms available - their fingerprints can typically be compared using the \textit{Hamming Distance}. 
+
+In addressing similarity of images in terms of, say, aesthetic, layout, etc. perceptual hashing methods are probably not very effective.
+This is due to the fact, that perceptual hashing methods rely on a per-pixel comparison, which will not hold for the proposed problem, as a photograph of the same kitchen may be taken from several different angles - and thus yield very dissimilar hashes. 
+There are more sophisticated methodologies to address the problem of finding semantic similarities in images - some of which will be discussed further below. 

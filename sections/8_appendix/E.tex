@@ -1,0 +1,16 @@
+\subsection*{Appendix E: t-SNE testing} \label{appendix: E}
+
+In determining the appropriateness of stating that the t-SNE visualizations imply better data distribution learning for VGG+DAE compared to VGG alone, a thorough grid assessment was performed.
+This can be replicated by running \url{model_catalogue/w_image_augmentation/tsne_comparison.py} found on the project repository.
+Running this script also outputs a plot per comparison - similar to \autoref{fig:tsne}
+
+\begin{table}[H]
+    \begin{tabular}{@{}lllllll@{}}
+    \toprule
+    \textbf{model}         & vgg+dae & vgg   & vgg+dae & vgg   & vgg+dae & vgg   \\ \midrule
+    \textbf{data}          & train   & train & train   & train & train   & train \\
+    \textbf{perplexity}    & 5       & 5     & 20      & 20    & 50      & 50    \\
+    \textbf{KL-divergence} & 1.85    & 3.22  & 1.80    & 2.99  & 1.56    & 2.55  \\ \bottomrule
+    \end{tabular}
+    \label{t-SNE comparison for training data}
+\end{table}

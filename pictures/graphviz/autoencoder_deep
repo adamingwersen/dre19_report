@@ -1,0 +1,159 @@
+digraph G {
+
+        rankdir=LR
+	splines=line
+        nodesep=.05;
+        
+        node [label=""];
+        
+    subgraph cluster_0 {
+		color=white;
+                node [style=solid,color=blue4, shape=circle];
+		x1 x2 x3 x4 x5 x6 x7 x8;
+		label = "input layer";
+	}
+
+	subgraph cluster_11 {
+		color=white;
+		node [style=solid,color=red1, shape=circle];
+		a111 a112 a113 a114 a115 a116 a117 a118
+		label = "FC layer (encoder)";
+	}
+
+
+	subgraph cluster_12 {
+		color=white;
+		node [style=solid,color=red2, shape=circle];
+		a121 a122 a123 a124;
+		label = "FC layer (encoder)";
+	}
+
+    subgraph cluster_2 {
+		color=white;
+		node [style=solid,color=purple1, shape=circle];
+		d1;
+		label = "bottleneck";
+	}
+
+    subgraph cluster_31 {
+		color=white;
+		node [style=solid,color=seagreen1, shape=circle];
+		b311 b312 b313 b314;
+		label="FC layer (decoder)";
+	}
+
+	subgraph cluster_32 {
+		color=white;
+		node [style=solid,color=seagreen2, shape=circle];
+		b321 b322 b323 b324 b325 b326 b327 b328;
+		label="FC layer (decoder)";
+	}
+
+    subgraph cluster_4 {
+		color=white;
+		node [style=solid,color=black, shape=circle];
+		y1 y2 y3 y4 y5 y6 y7 y8;
+		label="output layer";
+	}
+
+        x1 -> a111;
+        x2 -> a112;
+        x3 -> a113;
+        x4 -> a114;
+        x5 -> a115;
+        x6 -> a116;
+        x7 -> a117;
+        x8 -> a118;
+
+        a111 -> a121;
+        a112 -> a121;
+        a113 -> a121;
+        a114 -> a121;
+        a115 -> a121;
+        a116 -> a121;
+        a117 -> a121;
+        a118 -> a121;
+
+        a111 -> a122;
+        a112 -> a122;
+        a113 -> a122;
+        a114 -> a122;
+        a115 -> a122;
+        a116 -> a122;
+        a117 -> a122;
+        a118 -> a122;
+
+        a111 -> a123;
+        a112 -> a123;
+        a113 -> a123;
+        a114 -> a123;
+        a115 -> a123;
+        a116 -> a123;
+        a117 -> a123;
+        a118 -> a123;
+
+        a111 -> a124;
+        a112 -> a124;
+        a113 -> a124;
+        a114 -> a124;
+        a115 -> a124;
+        a116 -> a124;
+        a117 -> a124;
+        a118 -> a124;
+
+        a121 -> d1;
+        a122 -> d1;
+        a123 -> d1;
+        a124 -> d1;
+
+        d1 -> b311;
+        d1 -> b312;
+        d1 -> b313;
+        d1 -> b314;
+
+        b311 -> b321;
+        b311 -> b322;
+        b311 -> b323;
+        b311 -> b324;
+        b311 -> b325;
+        b311 -> b326;
+        b311 -> b327;
+        b311 -> b328;
+
+        b312 -> b321;
+        b312 -> b322;
+        b312 -> b323;
+        b312 -> b324;
+        b312 -> b325;
+        b312 -> b326;
+        b312 -> b327;
+        b312 -> b328;
+
+        b313 -> b321;
+        b313 -> b322;
+        b313 -> b323;
+        b313 -> b324;
+        b313 -> b325;
+        b313 -> b326;
+        b313 -> b327;
+        b313 -> b328;
+
+        b314 -> b321;
+        b314 -> b322;
+        b314 -> b323;
+        b314 -> b324;
+        b314 -> b325;
+        b314 -> b326;
+        b314 -> b327;
+        b314 -> b328;
+
+        b321 -> y1;
+        b322 -> y2;
+        b323 -> y3;
+        b324 -> y4;
+        b325 -> y5;
+        b326 -> y6;
+        b327 -> y7;
+        b328 -> y8;
+
+}

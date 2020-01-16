@@ -1,0 +1,16 @@
+\subsection*{Appendix C: DDAEs with pretrained layer variation}\label{appendix: C}
+In experimenting with deeper architectures and noise, no models appear to outperform the deep autoencoders or denoising autoencoders. Many variations were attempted - shown below are some examples of results and configurations.
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llllllll@{}}
+    \toprule
+    Pretrained     & Architecture             & Noise & Preprocessing & Test Acc. & Val. Acc. & Top-5 Test Acc. & Top-5 Val. Acc. \\ \midrule
+    VGG16(flatten) & 6272, 3136, 1568         & 0.3   & Places        & 0.68      & 0.654     & 0.891           & 0.896           \\
+    VGG16(flatten) & 25088, 12544, 6272, 3136 & 0.3   & Places        & 0.163     & 0.172     & 0.568           & 0.605           \\
+    VGG16(fc\_2)   & 4096, 2048, 1028         & 0.5   & Places        & 0.762     & 0.734     & 0.935           & 0.932           \\
+    VGG16(fc\_2)   & 5000, 3000, 1600         & 0.3   & Places        & 0.764     & 0.723     & 0.934           & 0.933           \\ \bottomrule
+    \end{tabular}%
+    }
+    \caption{Experimentation with DDAEs}
+\end{table}

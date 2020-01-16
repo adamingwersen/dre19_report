@@ -1,0 +1,15 @@
+\subsection*{Appendix A: Data Labeling}\label{appendix: A}
+In order to reduce the number of images to label, all images that could be easily determined to be primarily white/black images were discarded using mean-pixel values computations. 
+See \url{datatools/utils/classify_greyscale.py} for implementation. 
+
+Opening a folder with 22.000 images in an attempt to label them is taxing on hardware, and in order to alleviate the issue of a crashing file-manager GUI, data was split randomly into 20 subfolders using a shell script:
+\begin{minted}{shell}
+    for i in {1..20}
+    do
+	echo "Moving $1 images into $i"
+        ls -Q images/ | head -$1 | xargs -i mv images/{} segments/$i
+    done
+\end{minted}
+
+Finally the labeled data was split into train-test-val split using \url{datatolls/utils/split_data.py}.
+

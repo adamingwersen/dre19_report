@@ -1,0 +1,27 @@
+Model development is conducted by determining a reasonable baseline to compare candidate models with. 
+The baseline is constructed by first establishing a measure with which to propose a baseline performance. 
+
+\subsection{Model Performance Metrics}\label{sec:MPM}
+\subsubsection{Top-1 Accuracy}
+For each row in the cosine similarity matrix the column-index of the largest similarity value is found. 
+This is the model prediction for most similar item to the query item, $m$, is denoted $\widehat(y_{m}*)$
+$$
+\widehat{y_{m}*} = argmin_{n}(cdist_{mn})
+$$
+The top-1 classification accuracy is then computed as the fraction of candidate predictions that are correct out of all predictions made.
+
+\subsubsection{Top-5 Accuracy}
+As suggested in the imagenet challenge\autocite{ILSVRC15} a reasonable metric for asserting accuracy in image-classification tasks is to consider if any of the top-5 predictions match the source image class.
+This metric is arguably slightly generous for this particular task, seeing that there are only 6 classes as compared to the 1000 classes in the imagenet challenge, but may well reveal if models are underperforming in particular settings.
+
+\subsubsection{Training Optimizer}
+Due to time and resource constraints, experimenting with different training optimizers was not feasible, thus a choice was made to use the \texttt{ADADELTA}\autocite{Zeiler2012} optimizer, a variation on gradient descent.
+Throughout experimentation, the choice of training optimizer has been held constant, thus this factor will not be reported below.
+ADADELTA was chosen due to its configuration simplicity as it has an adaptive learning rate - simplifying hyperparameter search.
+Another optimizer, \texttt{ADAM}, was also considered for these experiments, as it adopts an exponentially decaying learning rate adaptation. 
+\texttt{ADAM} may have yielded faster convergence in deeper model choices\autocite{Kingma2015}, but was discarded due to its more complex nature.
+
+\subsubsection{Model Loss}
+Model loss is kept constant as well. Mean Squared Error (MSE), see \autoref{sec:Autoencoders}, is chosen due to its wide usage for autoencoder models throughout the literature.
+Loss-metrics are not reported in the following sections, as it varies significantly with choice of image preprocessing scheme and the introduction of noise in autoencoders.
+All models stated in the below section \autoref{sec:results} were configured to run for 2000 epochs with earlystopping, and all reported models did indeed stop early - this does not guarantee convergence, but is a good indication of convergence.

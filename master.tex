@@ -1,0 +1,127 @@
+\documentclass[a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+%------------------------------------ PACKAGES -----------------------------------------------
+\usepackage{dikutemplate}
+
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{subcaption}
+\usepackage{subfloat}
+\usepackage{mathtools}
+\usepackage{csquotes}
+
+\usepackage{minted}
+
+\usepackage[backend=biber]{biblatex}
+
+\addbibresource{bibliography/citations.bib}
+
+%------------------------------------ FRONTPAGE ----------------------------------------------
+\begin{document}
+	\AddToShipoutPicture*{\BackgroundPic}
+	\begin{titlepage}
+		\thispagestyle{empty}
+		\vspace*{5cm}
+		\begin{center}
+			\Huge \textbf{Transfer-learned Deep Autoencoders for Visual Similarity} \\
+      \LARGE \textbf{Image Similarity in the Danish Online Housing Market} \\
+		\end{center}
+		\vspace*{3.5cm}
+		\begin{flushleft}
+
+		\begin{table}[h!]
+			\begin{tabular}{lll}	
+	  \textbf{Author:} \\  Adam Frederik Ingwersen Linnemann \\ gqr701 \\ 
+	  \textbf{Supervisor:} \\ Desmond Elliott 
+			\end{tabular}
+		\end{table}
+			\vspace{3mm}
+			\vspace{3mm}
+			Datalogisk  Institut\\
+			Københavns Universitet\\
+			\vspace{3mm}
+			\today\\
+			%\vspace*{0.5cm}
+
+		\end{flushleft}
+	\end{titlepage}
+
+	\title{}
+	\author{}
+
+	\newpage
+\newpage
+
+%----------------------------------- DOCUMENT HEADERS ----------------------------------------
+\setAffiliation{Department of Computer Science \\ University of Copenhagen}
+\setShortAffiliation{DIKU}
+\setAssignment{}
+\setCourse{}
+\setAuthors{Authors}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+%----------------------------------- TEXT ----------------------------------------------------
+%%---- Note: Define Titles/Subtitles inside input-files
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+\input{"sections/0_abstract/abstract"}
+
+\newpage
+
+\section{Introduction}
+\input{"sections/1_introduction/introduction"}
+
+\section{Theory}
+\input{"sections/2_theory/perceptual_hashing"}
+\input{"sections/2_theory/neural_networks"}
+\input{"sections/2_theory/autoencoder"}
+\input{"sections/2_theory/transfer_learning"}
+\input{"sections/2_theory/similarity"}
+
+\section{Related Works}
+\input{"sections/3_related_works/related"}
+
+\section{Data}
+\input{"sections/4_data/danish_realestate"}
+\input{"sections/4_data/imagenet"}
+\input{"sections/4_data/places365"}
+\input{"sections/4_data/preprocessing"}
+
+\section{Experiments}
+\input{"sections/5_results/performance_metrics"}
+\input{"sections/5_results/baselines"}
+
+
+\section{Results} \label{sec:results}
+\input{"sections/5_results/model_evaluation"}
+
+\section{Future Work}
+\input{"sections/6_future_work/future_work"}
+
+\section{Conclusion}
+\input{"sections/7_conclusion/conclusion"}
+
+\newpage
+
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+\input{"sections/8_appendix/A"}
+\input{"sections/8_appendix/B"}
+\input{"sections/8_appendix/C"}
+\input{"sections/8_appendix/D"}
+\input{"sections/8_appendix/E"}
+
+\newpage
+
+\section*{Bibliography}
+\addcontentsline{toc}{section}{Bibliography}
+\printbibliography
+
+\end{document}

@@ -1,0 +1,93 @@
+digraph G {
+
+        rankdir=LR
+	splines=line
+        nodesep=.05;
+        
+        node [label=""];
+        
+    subgraph cluster_0 {
+		color=white;
+                node [style=solid,color=blue4, shape=circle];
+		x1 x2 x3 x4 x5;
+		label = "input layer";
+	}
+
+	subgraph cluster_1 {
+		color=white;
+		node [style=solid,color=red2, shape=circle];
+		a12 a22 a32 a42 a52;
+		label = "encoder";
+	}
+
+	subgraph cluster_2 {
+		color=white;
+		node [style=solid,color=purple1, shape=circle];
+		d1 d2 d3;
+		label = "bottleneck";
+	}
+
+	subgraph cluster_3 {
+		color=white;
+		node [style=solid,color=seagreen2, shape=circle];
+		O1 O2 O3 O4 O5;
+		label="decoder";
+	}
+
+    subgraph cluster_4 {
+		color=white;
+		node [style=solid,color=black, shape=circle];
+		y1 y2 y3 y4 y5;
+		label="output layer";
+	}
+
+        x1 -> a12;
+        x2 -> a22;
+        x3 -> a32;
+        x4 -> a42;
+        x5 -> a52;
+
+        a12 -> d1
+        a22 -> d1
+        a32 -> d1
+        a42 -> d1
+        a52 -> d1
+
+        a12 -> d2
+        a22 -> d2
+        a32 -> d2
+        a42 -> d2
+        a52 -> d2
+
+        a12 -> d3
+        a22 -> d3
+        a32 -> d3
+        a42 -> d3
+        a52 -> d3
+
+        d1 -> O1
+        d1 -> O2
+        d1 -> O3
+        d1 -> O4
+        d1 -> O5
+
+        d2 -> O1
+        d2 -> O2
+        d2 -> O3
+        d2 -> O4
+        d2 -> O5
+
+        d3 -> O1
+        d3 -> O2
+        d3 -> O3
+        d3 -> O4
+        d3 -> O5
+
+        O1 -> y1
+        O2 -> y2
+        O3 -> y3
+        O4 -> y4
+        O5 -> y5
+
+
+}

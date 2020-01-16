@@ -1,0 +1,10 @@
+*.swp
+_minted-master
+**.bbl
+**.bcf
+**.fls
+**.blg
+**.log
+**.out
+**.xml
+**.toc
