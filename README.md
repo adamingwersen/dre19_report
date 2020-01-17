@@ -1,18 +1,22 @@
-<h2> A report template for my reports @ DIKU </h2>
+# Transfer-Learned Autoencoders for Visual Similarity
+## Image Similarity in the Danish Online Housing Market
 
-<b>.sty-file provided by Oleks Shturmov, University of Copenhagen</b>
+> This is my bachelors thesis submission for my BSc in Computer Science @ University of Copenhagen, 2020
 
-Make sure, as before, to have installed: <b>pygments</b> for <b>python3</b>.
+### Abstract
+This paper investigates the ability of autoencoders to learn meaningful hidden represen- tations from feature vectors of publicly available pretrained neural networks. Several variations of autoencoders are trained in an unsupervised manner to reproduce images collected from the Danish online housing market; these show adeptness in encoding input such that six different classes of rooms are well-separated.
 
-To build <b>master.tex</b>, simply run:
+A thorough set of experiments are conducted on the data, showing that some pre- trained networks produce decent predictions out-of-the-box, and that autoencoders can be trained to reduce the dimensionality by a factor of 8 from pretrained feature vectors while improving accuracy in four out of four classification accuracy metrics. Further- more, a review of the impact of image augmentation procedures is conducted; it is found that model accuracy can be improved by up to 30 percentage points in some models by means of adequate image preprocessing, all else equal.
 
-``` shell
-./buildReport.sh
-```
+Methodologies for computing distance coefficients and retrieving similar images given a query image are explored and used in an exposition of the capabilities of pretrained neural networks in comparison to various autoencoder architectures.
+Finally, it is established that autoencoders in combination with passes through pre- trained neural networks yield useful representations in the encoding layer. These en- coded representations produce a good foundation for determining similarity between images in the domain of the danish housing market.
 
-<h3> Document Headers </h3>
-Examples are given in <b>master.tex</b>.
+### Results
+![alt text](pictures/plots/final_cand_perf.png "Candidate Model Accuracy")
 
+> The most performant overall candidate model is VGGG16-AE-512 
 
+### Example Predictions
+![alt text](pictures/plots/kitchen_4_test.png "Predictions on test image")
 
-
+![alt text](pictures/plots/test_final_5by2_2.png "Predictions on multiple test images")
