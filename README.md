@@ -12,11 +12,21 @@ Methodologies for computing distance coefficients and retrieving similar images 
 Finally, it is established that autoencoders in combination with passes through pre- trained neural networks yield useful representations in the encoding layer. These en- coded representations produce a good foundation for determining similarity between images in the domain of the danish housing market.
 
 ### Results
+#### Overview of Candidate Models
 ![alt text](pictures/plots/final_cand_perf.png "Candidate Model Accuracy")
 
-> The most performant overall candidate model is VGGG16-AE-512 
+#### t-SNE Visualizations
+##### VGG16-AE-512
+![alt text](pictures/plots/tsne_vgg16_dae.png "t-SNE, VGG16-AE-512")
+
+##### VGG16 Baseline
+![alt text](pictures/plots/tsne_vgg16_dae.png "t-SNE, VGG16-AE-512")
+
+> The most performant overall candidate model is VGGG16-AE-512. 
 
 ### Example Predictions
+#### Ranked Predictions
 ![alt text](pictures/plots/kitchen_4_test.png "Predictions on test image")
 
+#### Top-1 predictions
 ![alt text](pictures/plots/test_final_5by2_2.png "Predictions on multiple test images")
