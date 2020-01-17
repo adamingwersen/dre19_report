@@ -20,7 +20,7 @@ Finally, it is established that autoencoders in combination with passes through 
 ![alt text](pictures/plots/tsne_vgg16_dae.png "t-SNE, VGG16-AE-512")
 
 ##### VGG16 Baseline
-![alt text](pictures/plots/tsne_vgg16_dae.png "t-SNE, VGG16-AE-512")
+![alt text](pictures/plots/tsne_vgg16.png "t-SNE, VGG16-AE-512")
 
 > The most performant overall candidate model is VGGG16-AE-512. 
 
