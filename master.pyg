@@ -1,5 +1,0 @@
-    for i in {1..20}
-    do
-	echo "Moving $1 images into $i"
-        ls -Q images/ | head -$1 | xargs -i mv images/{} segments/$i
-    done

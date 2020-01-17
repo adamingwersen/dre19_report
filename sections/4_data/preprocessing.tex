@@ -15,7 +15,7 @@ Utilizing \texttt{keras.applications.resnet50.preprocess\_input} subtracts the m
 The RGB-channel means for imagenet are $[103.939, 116.779, 123.68]$\footnote{\href{https://github.com/keras-team/keras-applications/tree/8a1e4d427999c26d1a1988dda45454769c4372a5/keras_applications}{keras.applications source code}}.
 
 \paragraph{Places365 Image Augmentation Configuration} ~\\
-VGG16 pretrained on \texttt{places365}\autocite{gkallia2017keras_places365} uses a similar strategy to \autoref{par:resnet50}, but centers the RBG values around the mean RGB-channel values for the places365 dataset. 
+VGG16 pretrained on \texttt{places365}\autocite{gkallia2017keras_places365} uses a similar strategy to the \nameref{par:resnet50}, but centers the RBG values around the mean RGB-channel values for the places365 dataset. 
 The RGB-channel means for places365 are $[104.006, 116.669, 122.679]$ - implying that colors in the red and blue spectrum are slightly more prevalent in the places365 dataset compared to imagenet.
 
 \subsubsection{Comparing augmentation schemes}

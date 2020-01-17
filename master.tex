@@ -11,6 +11,8 @@
 \usepackage{subfloat}
 \usepackage{mathtools}
 \usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage{txfonts}
 
 \usepackage{minted}
 
@@ -25,7 +27,7 @@
 		\thispagestyle{empty}
 		\vspace*{5cm}
 		\begin{center}
-			\Huge \textbf{Transfer-learned Deep Autoencoders for Visual Similarity} \\
+			\Huge \textbf{Transfer-Learned Autoencoders for Visual Similarity} \\
       \LARGE \textbf{Image Similarity in the Danish Online Housing Market} \\
 		\end{center}
 		\vspace*{3.5cm}
@@ -55,17 +57,14 @@
 \newpage
 
 %----------------------------------- DOCUMENT HEADERS ----------------------------------------
-\setAffiliation{Department of Computer Science \\ University of Copenhagen}
-\setShortAffiliation{DIKU}
-\setAssignment{}
-\setCourse{}
-\setAuthors{Authors}
+% \setAffiliation{University of Copenhagen}
+\setShortAffiliation{Transfer-learned Autoencoders for Visual Similarity}
+% \setAssignment{}
+% \setCourse{Bachelors Thesis}
+% \setShortAuthors{GQR701}
+% \setAuthors{Adam Ingwersen}
 
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{2}
-\tableofcontents
 
-\newpage
 
 %----------------------------------- TEXT ----------------------------------------------------
 %%---- Note: Define Titles/Subtitles inside input-files
@@ -74,6 +73,10 @@
 \input{"sections/0_abstract/abstract"}
 
 \newpage
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
+\tableofcontents
 
 \section{Introduction}
 \input{"sections/1_introduction/introduction"}
@@ -113,9 +116,13 @@
 \section*{Appendix}
 \addcontentsline{toc}{section}{Appendix}
 \input{"sections/8_appendix/A"}
+\newpage
 \input{"sections/8_appendix/B"}
+\newpage
 \input{"sections/8_appendix/C"}
+\newpage
 \input{"sections/8_appendix/D"}
+\newpage$
 \input{"sections/8_appendix/E"}
 
 \newpage

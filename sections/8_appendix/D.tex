@@ -3,14 +3,28 @@ The baseline model appears to predict very similar images on the test-set.
 \begin{figure}[H]
     \centering
       \includegraphics[width=\textwidth]{pictures/plots/vgg16purepred}
-      \caption{Predictions (test): VGG16 FP}
+      \caption{Predictions (test): VGG16}
       \label{fig:vggpure}
 \end{figure}
 
-The best DAE also performs very well for the same images.
+The best AE also performs very well for the same images.
 \begin{figure}[H]
     \centering
-      \includegraphics[width=\textwidth]{pictures/plots/vggdaepred}
-      \caption{Predictions (test): VGG16 + DAE}
+      \includegraphics[width=\textwidth]{pictures/plots/test_final_5by2}
+      \caption{Predictions (test): VGG16-AE-512}
       \label{fig:vggdae}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{pictures/plots/vgg16purepred_2}
+    \caption{More Predictions (test): VGG16}
+    \label{fig:vggpure2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=\textwidth]{pictures/plots/test_final_5by2_2}
+    \caption{More Predictions (test): VGG16-AE-512}
+    \label{fig:vggdae2}
 \end{figure}

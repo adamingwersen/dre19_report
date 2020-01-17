@@ -175,7 +175,7 @@
 \NewDocumentCommand\header{m}{\setkeys{header}{#1}}
 %%%
 
-%%%
+%%
 % Fancy
 \RequirePackage{fancyhdr}
 % \RequirePackage{lastpage}
@@ -190,11 +190,11 @@
 \setlength{\headheight}{20pt}
 \addtolength{\textheight}{-20pt}
 
-% \fancypagestyle{first}{%
-%   \fancyhf{}%
-%   \cfoot{\thepage/\pageref*{LastPage}}%
-% }
-%%%
+\fancypagestyle{first}{%
+  \fancyhf{}%
+  \cfoot{\thepage/\pageref*{LastPage}}%
+}
+%%
 
 %%%
 % Captions

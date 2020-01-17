@@ -3,14 +3,14 @@ Over the last decade, autoencoders have been thought of as potentially useful fo
 In practice, though, autoencoders are not ideal for compressing e.g. images or sound - and have failed to replace compression algorithms such as \texttt{JPEG} and \texttt{MP3}.
 Autoencoding procedures are best suited for tasks that require data-specificity - i.e. an autoencoder trained to compress images of cats, typically will not do well in compressing images of cars. 
 \newline
-Currently, autoencoders are commonly used for data-denoising, e.g. removing static noise from images. 
+Autoencoders are commonly used for data-denoising, e.g. removing static noise from images. 
 Autoencoders are also utilized for their ability to compress information into a smaller space - this can be useful in generating visualizations and assessing similarity of data. 
 \newline
 Autoencoders come in many different varieties; denoising, deep, convolutional, etc. Each of these have their own drawbacks and merits and will be discussed further.
 
 Within the field of machine learning, an autoencoder refers to a neural network architecture which is trained to replicate its input to its output\autocite{Bengio2009}.
 
-An autoencoder utilizes an encoder, that compresses its input to a lower dimension vector - and a decoder that seeks to replicate the original input from this lower dimension representation.
+An autoencoder utilizes an encoder, which compresses its input to a lower dimension vector - and a decoder that seeks to replicate the original input from this lower dimension representation.
 Autoencoders are symmetrical in that the encoding layer is mimicked in the decoding layer as an inverted version of the encoding layer.
 
 \begin{figure}[H]

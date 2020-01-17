@@ -1,5 +1,41 @@
-\subsection*{Appendix C: DDAEs with pretrained layer variation}\label{appendix: C}
-In experimenting with deeper architectures and noise, no models appear to outperform the deep autoencoders or denoising autoencoders. Many variations were attempted - shown below are some examples of results and configurations.
+\subsection*{Appendix C: Autoencoder Experiments}\label{appendix: C}
+Model configurations can be found at \url{github.com/adamingwersen/dre19/model_catalogue}.
+\newline
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llllllll@{}}
+    \toprule
+    Pretrained    & AE Layers                   & Preprocessing   & Test Acc.      & Val. Acc.      & Top-5 Test Acc. & Top-5 Val. Acc. \\ \midrule
+    ResNet50      & 2048, 1028, 512             & Simple          & 0.324          & 0.345          & 0.698           & 0.664           \\
+    ResNet50      & 2048, 1028, 512             & Places          & 0.659          & 0.654          & \textbf{0.926}  & 0.929           \\
+    VGG16         & 4096, 2048, 1028            & Simple          & 0.541          & 0.516          & 0.830           & 0.820           \\
+    VGG16         & 4096, 2048, 1028            & Places          & \textbf{0.775} & \textbf{0.764} & 0.914           & \textbf{0.934}  \\
+    VGG16         & 6000, 4000, 3000, 2000, 800 & Places          & 0.745          & 0.749          & 0.9             & 0.915           \\ \bottomrule
+    \end{tabular}%
+    }
+    \caption{Experimentation with deep AEs}
+    \label{fig:expdeepae}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llllllll}
+    \hline
+    Pretrained    & AE Layers                   & Preprocessing   & Test Acc.      & Val. Acc.      & Top-5 Test Acc. & Top-5 Val. Acc. \\ \midrule
+    ResNet50 (max\_pool) & 2048, 512    & Simple              & 0.337          & 0.338          & 0.693           & 0.697           \\
+    ResNet50 (max\_pool) & 2048, 512    & ImageNet           & 0.341          & 0.328          & 0.704           & 0.671           \\
+    ResNet50 (max\_pool) & 2048, 512    & Places             & 0.650          & 0.661          & \textbf{0.927}  & 0.911           \\
+    VGG16 (fc\_1)        & 4096, 1028   & Simple              & 0.528          & 0.529          & 0.818           & 0.820           \\
+    VGG16 (fc\_1)        & 4096, 1028   & Places              & \textbf{0.778} & \textbf{0.783} & 0.915           & \textbf{0.928}  \\ \bottomrule
+    \end{tabular}%
+    }
+    \caption{Initial experiments with denoising autoencoders, noise-factor = 0.3}
+    \label{tab:daeresults}
+  \end{table}
+
+
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -13,4 +49,5 @@ In experimenting with deeper architectures and noise, no models appear to outper
     \end{tabular}%
     }
     \caption{Experimentation with DDAEs}
+    \label{fig:godeeper}
 \end{table}
