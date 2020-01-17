@@ -12,11 +12,11 @@ Pixel normalization is a common transformation which achieves lower combinatoria
 \paragraph{ImageNet Image Augmentation Configuration}\label{par:resnet50} ~\\
 The ResNet50 image augmentation scheme operates slightly differently depending on the input type and \texttt{keras.backend} configuration - this will not be discussed further. 
 Utilizing \texttt{keras.applications.resnet50.preprocess\_input} subtracts the mean RGB-channel values of the entire \texttt{imagenet} dataset from the provided input. 
-The RGB-channel means for imagenet are $[103.939, 116.779, 123.68]$\footnote{\href{https://github.com/keras-team/keras-applications/tree/8a1e4d427999c26d1a1988dda45454769c4372a5/keras_applications}{keras.applications source code}}.
+The RGB-channel means for ImageNet are $[103.939, 116.779, 123.68]$\footnote{\href{https://github.com/keras-team/keras-applications/tree/8a1e4d427999c26d1a1988dda45454769c4372a5/keras_applications}{keras.applications source code}}.
 
-\paragraph{Places365 Image Augmentation Configuration} ~\\
-VGG16 pretrained on \texttt{places365}\autocite{gkallia2017keras_places365} uses a similar strategy to the \nameref{par:resnet50}, but centers the RBG values around the mean RGB-channel values for the places365 dataset. 
-The RGB-channel means for places365 are $[104.006, 116.669, 122.679]$ - implying that colors in the red and blue spectrum are slightly more prevalent in the places365 dataset compared to imagenet.
+\paragraph{Places Image Augmentation Configuration} ~\\
+VGG16 pretrained on \texttt{places365}\autocite{gkallia2017keras_places365} uses a similar strategy to the \nameref{par:resnet50}, but centers the RBG values around the mean RGB-channel values for the Places dataset. 
+RGB-channel means for Places $[104.006, 116.669, 122.679]$ \footnote{\href{https://github.com/GKalliatakis/Keras-VGG16-places365/commit/bdadf6a4ddbb1cc56e6826f0bb375bafd3cd0c1a#diff-a6d65babe02b4e2cca2d2c981f7e1e7f}{github.com/GKalliatakis/Keras-VGG16-places365}}- which imply that colors in the red and blue spectrum are slightly more prevalent in the Places dataset compared to ImageNet.
 
 \subsubsection{Comparing augmentation schemes}
 From \autoref{fig:preprocessing_images}, it is clear, that the choice of image augmentation scheme has significant repercussions for what features a model is inclined to learn. 
@@ -28,4 +28,4 @@ From \autoref{fig:preprocessing_images}, it is clear, that the choice of image a
     \label{fig:preprocessing_images}
 \end{figure}
 
-It appears, that the places365 image augmentation picks up lighting in rooms in a more pronounced way in both sample images - this could be a contributing factor for detecting commonalities in human-percieved aesthetics. 
+It appears, that the Places image augmentation picks up lighting in rooms in a more pronounced way in both sample images - this could be a contributing factor for detecting commonalities in human-perceived aesthetics. 

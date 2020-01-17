@@ -1,10 +1,9 @@
-\subsection*{Appendix A: Data Labeling}\label{appendix: A}.
-\newline
+\subsection*{Appendix A: Data Labeling}\label{appendix: A}
 All code for this project has been uploaded at \url{github.com/adamingwersen/dre19}
 In order to reduce the number of images to label, all images that could be easily determined to be primarily white/black images were discarded using mean-pixel values computations. 
 See \url{datatools/utils/classify_greyscale.py} for implementation. 
 
-Opening a folder with 22.000 images in an attempt to label them is taxing on hardware, and in order to alleviate the issue of a crashing file-manager GUI, data was split randomly into 20 subfolders using a shell script:
+Opening a folder with 22.000 images in an attempt to label them is taxing on hardware, and in order to alleviate the issue of a crashing file-manager GUI, data was split randomly into 20 sub directories using a shell script:
 \begin{minted}{shell}
     for i in {1..20}
     do

@@ -1,12 +1,16 @@
-This paper investigates ability of autoencoders to learn meaningful hidden representations from publicly available pretrained neural networks.
-Several variations of autoencoders have are trained in an unsupervised manner to reproduce images collected from the Danish online housing market, and show adeptness in distinguishing between six different types of rooms.
+This paper investigates the ability of autoencoders to learn meaningful hidden representations from feature vectors of publicly available pretrained neural networks.
+Several variations of autoencoders are trained in an unsupervised manner to reproduce images collected from the Danish online housing market; these show adeptness in encoding input such that six different classes of rooms are well-separated.
 \newline
 \newline
 A thorough set of experiments are conducted on the data, showing that some pretrained networks produce decent predictions out-of-the-box, and that autoencoders can be trained to reduce the dimensionality by a factor of 8 from pretrained feature vectors while improving accuracy in four out of four classification accuracy metrics.
-Furthermore, an analysis of the impact of image augmentation procedures is conducted; it is found that model accuracy can be improved by up to 30 percentage points in some models, all else equal. 
+Furthermore, a review of the impact of image augmentation procedures is conducted; it is found that model accuracy can be improved by up to 30 percentage points in some models by means of adequate image preprocessing, all else equal. 
 \newline
 Methodologies for computing distance coefficients and retrieving similar images given a query image are explored and used in an exposition of the capabilities of pretrained neural networks in comparison to various autoencoder architectures.
 \newline
+\newline
+Finally, it is established that autoencoders in combination with passes through pretrained neural networks yield useful representations in the encoding layer. 
+These encoded representations produce a good foundation for determining similarity between images in the domain of the danish housing market.
+
 
 
 

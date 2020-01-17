@@ -1,11 +1,11 @@
 \subsection{Transfer Learning}
-The motivation behind transfer learning is to transfer generalizable features from one network to another - leveraging learning from different settings than the downstream task. 
+The motivation behind transfer learning is to transfer generalizable features from one network to another - extracting learned features from networks trained on different settings. 
 A useful notation for describing transfer learning was provided in (Pan and Yang, 2010)\autocite{PanYang2010}. 
 
 Consider a data domain, $\mathcal{D}$, there exists a complete feature space $\mathcal{X}$. 
 When training models, limited data is available and we rely on a sample of that feauture space; $X = x_{1},...,x_{n} \in \mathcal{X}$.
 The marginal distribution of $\mathcal{D}$ is $P(x)$. We describe $\mathcal{D} = \{\mathcal{X}, P(X)\}$. 
-A task, $\mathcal{T}$ has label space $\mathcal{Y}$ and a conditional probabiltiy distribution, $P(Y|X)$ learned from the training sample.
+A task, $\mathcal{T}$ has label space $\mathcal{Y}$ and a conditional probability distribution, $P(Y|X)$ learned from the training sample.
 \newline
 Transfer learning is concerned with mapping learned features from one domain and target to another such that information learned in the source setting $\mathcal{D}_S, \mathcal{T}_S$ can aid in identifying the conditional probability distribution $P(Y_{T}|X_{T})$ of a different target domain, $\mathcal{D}_T$.
 \newline

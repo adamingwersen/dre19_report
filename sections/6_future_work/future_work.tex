@@ -1,13 +1,11 @@
-This section proposes possible improvements to models, data and further experiments to conduct. 
-
-\subsection{Unsupervised Training on Remaining DRE19 Data} \label{sec:fwork1}
+\subsection{Semi-Supervised Training on Remaining DRE19 Data} \label{sec:fwork1}
 Approximately 15.000 images out of the 22.000 have not been labeled or sorted. 
 With the experiments conducted in this paper, it appears that the unsupervised learning strategy provides promising results for transfer learned autoencoders.
 A natural next step would be to add a portion of the remaining data to training data and keep a much larger validation and test set for evaluation.
 Doing so could potentially push an autoencoder towards learning more accurate and denser representations. 
 \newline
 \newline
-In addition, given the \~95\% top-5 accuracy in the final VGG16-AE-512 model, it may be feasible to construct an overlapping prediction scheme for labeling new images.
+In addition, given the $\sim 95\%$ top-5 accuracy in the final VGG16-AE-512 model, it may be feasible to construct an overlapping prediction scheme for labeling new images.
 This could be achieved by for any new image, predict e.g. the 5 most similar items from the labeled dataset and produce a class label by means of e.g. a KNN-classifier for the new image based on the most prevalent predicted class:
 $$
 Image \xrightarrow{\text{KNN(top5(VGG16-AE-512))}} \hat{y}_{5} = [bathroom, bathroom, entre, bathroom, kitchen]
@@ -17,12 +15,12 @@ $$
 $$
 \newline
 Furthermore it would be interesting to see how the model behaves given data that was deliberately excluded from the curated DRE19 data. 
-An analysis of may show that the model lacks robustness or that it does in fact produce large cosine distance coefficients for e.g. gardens and bathrooms, such that these could be excluded from predictions to potential end-users.
+An analysis of such a model may show that the model lacks robustness or that it does in fact produce large cosine distance coefficients for e.g. gardens and bathrooms, such that these could be excluded from predictions to potential end-users.
 
 \subsection{Further Experimentation with Autoencoders}
 The concept of Convolutional Autoencoders has not been touched on in this paper. 
 This variation on autoencoders have proven useful in feature extraction from images\autocite{MAGGIPINTO2018126} in other domains.
-Such autoencoders consist of convolutional layers, that are much more adept and handling higher-dimensional data and are very perfomant in other computer vision tasks.
+Such autoencoders consist of convolutional layers, that are much more adept and handling higher-dimensional data and are very performant in other computer vision tasks.
 Using a convolutional input layer, an autoencoder could also directly transfer input from earlier, higher-dimensional layers in pretrained models, which may further boost the learning of meaningful features. 
 \newline
 \newline

@@ -1,13 +1,13 @@
 \subsection{Candidate Models}
-Given the baseline performance of the pretrained VGG16 with places image preprocessing, a set of candidate models are proposed with the aim of 1) improving accuracy and 2) reducing dimensionality of feature vectors allowing for faster computation of similarity matrix.
-The results from \autoref{sec:baselinemodels} would suggest, that out-of-the-box performance for autoencoder arhcitectures may perform better in producing well-defined encodings from VGG16's fc\_1-layer using Places image preprocessing. 
+Given the baseline performance of the pretrained VGG16 with Places image preprocessing, a set of candidate models are proposed with the aim of 1) improving accuracy and 2) reducing dimensionality of feature vectors allowing for faster computation of similarity matrix.
+The results from \autoref{sec:baselinemodels} would suggest, that out-of-the-box performance for autoencoder architectures may perform better in producing well-defined encodings from VGG16's fc\_1-layer using Places image preprocessing. 
 
 \paragraph{Pretrained Model with Denoising Autoencoder} \\~
 Several configurations of pretrained models with denoising autoencoders have been attempted throughout experimentation. 
 Generally autoencoders in this setting tend to perform better when the first encoder layer is of similar dimensions to the input feature vector. 
 Broader bottlenecks also tend to retain more information after training, see \nameref{appendix: C}
 
-It would appear, that models trained on input preprocessed with Simple or ImageNet prepocessing schemes achieve significantly lower accuracies compared to models trained on Places preprocessed data. 
+It would appear, that models trained on input preprocessed with Simple or ImageNet preprocessing schemes achieve significantly lower accuracies compared to models trained on Places preprocessed data. 
 Furthermore, models with Places pretrained weights perform better across the board, all else equal. 
 
 
@@ -31,9 +31,9 @@ Adding noise to deep autoencoders yields slightly worse results in terms of accu
   }
   \caption{Performance of DAEs}
 \end{table}
-More results for DDAE's with pretrained layer alternation can be found in Appendix C, \autoref{fig:godeeper}.
+More results for DDAEs with pretrained layer alternation can be found in Appendix C, \autoref{fig:godeeper}.
 
-\paragraph{Pretrained Model with Autoencoder} \\~
+\paragraph{Pretrained Model with Autoencoder} \newline
 In later experiments it was shown, that the best candidate model was obtained by not using more sophisticated autoencoder architectures, but that shallow autoencoders without noise outperformed every other model and the baseline.
 \begin{table}[H]
   \centering
@@ -44,18 +44,21 @@ In later experiments it was shown, that the best candidate model was obtained by
   VGG16(fc\_1) & 4096, 2048           & \textbf{0.782 (+ .013)} & 0.773 (+ .013)          & 0.937 (+ .008)          & 0.944 (+ .017)          \\
   VGG16(fc\_1) & 4096, 3072          & 0.778 (+ .009)          & 0.765 (+ .005)          & 0.943 (+ .014)          & 0.940 (+ .013)          \\
   VGG16(fc\_1) & 4096, 512           & 0.771 (+ .002)          & \textbf{0.783 (+ .023)} & \textbf{0.945 (+ .016)} & \textbf{0.951 (+ .024)} \\
-  VGG16(fc\_1) & 4096, 128          & 0.775 (+ .006           & 0.774 (+ .014)          & 0.936 (+ .007)          & 0.944 (+ .017)          \\ \bottomrule
+  VGG16(fc\_1) & 4096, 128          & 0.775 (+ .006)           & 0.774 (+ .014)          & 0.936 (+ .007)          & 0.944 (+ .017)          \\ \bottomrule
   \end{tabular}%
   }
   \caption{Experimentation with AEs (Places preprocessing), parentheses indicate improvement over baseline}
   \label{fig:finaltable}
 \end{table}
 
+In \nameref{sec:trainae}, it is suggested that adding regularization in the bottleneck layer improves performance for autoencoders. 
+Naïve trials, adding L1-regularization with $\lambda = 0.001$ to the bottleneck layer were attempted - but all experiments yielded lower accuracies across all metrics.
+Thus, regularization has not been used in the proposed models - and the results on regularization have been omitted from this paper for the sake of brevity.
 
 \subsection{Model Evaluation}
 In the above section, minute improvements over the best baseline model were observed. 
 This section produces a more in-depth, side-by-side comparison of the best-performing candidate model, in terms of test/val accuracy.
-The shallow AE-512 with Places image preprocessing from \autoref{fig:finaltable} achieves the best overall results among all candidate models. 
+The shallow VGG16-AE-512 with Places image preprocessing from \autoref{fig:finaltable} achieves the best overall results among all candidate models. 
 Furthermore, it outperforms the baseline on every metric.
 
 \begin{figure}[H]
@@ -83,8 +86,8 @@ In \autoref{fig:aepredictions_full} predictions on the test set are shown using 
 More predictions by VGG16 and VGG16-AE-512 on more classes can be found in \nameref{appendix: D}.
 \newline
 \newline
-In order to get and understanding of the models it useful to map the feature vectors of a model into a 2-dimensional space using \texttt{t-SNE}\autocite{Chu2017}\autocite{HintonScience2006}. 
-As suggested in \autocite{wattenberg2016how}, several combinations of hyperparameters were tested on train, test, and validation data; see \nameref{appendix: E}.
+In order to get and understanding of the models it is useful to map the feature vectors of a model into a 2-dimensional space using \texttt{t-SNE}\autocite{Chu2017}\autocite{HintonScience2006}. 
+As suggested in \autocite{wattenberg2016how}, several combinations of hyper parameters were tested on train, test, and validation data; see \nameref{appendix: E}.
 For all configurations, the DAE produces a lower KL-divergence, indicating that VGG16-AE-512 has learned a representation better at separating images that would otherwise be clustered together.
 
 \begin{figure}[H]
